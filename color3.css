@@ -1,0 +1,1075 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation styles */
+nav {
+  background-color: rgb(158, 5, 228);
+  width: 100%;
+  min-height: 45vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Title section */
+.title-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.head1 {
+  font-size: 4.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: url("color-5.png");
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Input section */
+.input-section {
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Input wrapper */
+.input-wrapper {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-label {
+  color: #04279a;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  width: 80%;
+  text-align: left;
+}
+
+.input-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Input fields */
+#fromBox,
+#toBox {
+  background-color: #041f76;
+  border-radius: 10px;
+  width: 80%;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  border: 2px solid rgb(5, 5, 79);
+  color: white;
+  transition: border-color 0.3s;
+  margin-bottom: 5%;
+}
+
+#fromBox:focus,
+#toBox:focus {
+  outline: none;
+  border-color: #e0e2ea;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Dropdown styles */
+.dropdown {
+  margin-top: -3%;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-height: 245px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #597ae8;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  list-style-type: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(89, 87, 87, 0.1);
+}
+
+.dropdown li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: all 0.2s;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li:hover {
+  background-color: #bbadad;
+  color: #1a49e2;
+}
+
+/* Swap button - DESKTOP */
+.swap-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding-top: 37px;
+  margin: 0 10px;
+}
+
+.swapbox {
+  width: 50px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 18px;
+  transition: transform 0.3s;
+}
+
+.swapbox:hover {
+  transform: scale(1.1);
+}
+
+.rotate-once {
+  animation: rotateOnce 0.15s ease-in-out forwards;
+}
+
+@keyframes rotateOnce {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: rgb(5, 5, 79);
+  color: white;
+  width: 140px;
+  height: 45px;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  border: 2px solid rgb(5, 5, 79);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: yellow;
+  color: rgb(10, 10, 10);
+  border-color: yellow;
+  transform: translateY(-2px);
+}
+
+/* =========================================== */
+/* RESPONSIVE MAP CONTAINER */
+/* =========================================== */
+
+/* =========================================== */
+/* RESPONSIVE MAP CONTAINER - UPDATED */
+/* =========================================== */
+
+.map-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 0; /* Remove border radius for full screen */
+  box-shadow: none; /* Remove shadow for full screen */
+}
+
+.campus-map {
+   width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* =========================================== */
+/* RESPONSIVE DESIGN - UPDATED MAP FOR MOBILE */
+/* =========================================== */
+
+/* 1200px and below */
+@media screen and (max-width: 1200px) {
+  /* Keep other styles, just update map */
+  .campus-map {
+    object-fit: contain; /* Use contain for larger screens */
+  }
+}
+
+/* 992px and below */
+@media screen and (max-width: 992px) {
+  .campus-map {
+    object-fit: contain;
+  }
+}
+
+/* 768px and below - MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  /* Remove all padding and margins from map container */
+  .map-container {
+    padding: 0;
+    margin: 0;
+    min-height: 55vh; /* Adjust based on your preference */
+  }
+  
+  .map-wrapper {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .campus-map {
+     width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  }
+}
+
+/* 576px and below - SMALL MOBILE */
+@media screen and (max-width: 576px) {
+  .map-container {
+    min-height: 55vh;
+    padding: 0;
+  }
+  
+  .campus-map {
+     width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  }
+}
+
+/* 480px and below - EXTRA SMALL MOBILE */
+@media screen and (max-width: 480px) {
+  .map-container {
+    min-height: 50vh;
+  }
+  
+  .campus-map {
+     width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  }
+}
+
+/* 400px and below - VERY SMALL MOBILE */
+@media screen and (max-width: 400px) {
+  .map-container {
+    min-height:0vh;
+  }
+  
+  .campus-map {
+     width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  }
+}
+
+/* Portrait mode adjustments */
+@media screen and (max-height: 700px) and (orientation: portrait) {
+  nav {
+    min-height: 35vh;
+    padding: 15px;
+  }
+  
+  .map-container {
+    min-height: 65vh;
+  }
+  
+  .campus-map {
+     width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  nav {
+    min-height: 50vh;
+  }
+  
+  .map-container {
+    min-height: 50vh;
+  }
+  
+  .campus-map {
+    object-fit: contain; /* Use contain for landscape */
+  }
+}
+
+/* =========================================== */
+/* RESPONSIVE DESIGN - MOBILE WITH OPTIMIZED SPACING */
+/* =========================================== */
+
+/* 1200px and below */
+@media screen and (max-width: 1200px) {
+  .head1 {
+    font-size: 4rem;
+  }
+
+  .input-row {
+    gap: 15px;
+  }
+
+  .input-wrapper {
+    min-width: 280px;
+  }
+}
+
+/* 992px and below */
+@media screen and (max-width: 992px) {
+  .head1 {
+    font-size: 3.5rem;
+  }
+
+  .nav-container {
+    padding: 10px;
+  }
+
+  .input-label {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 130px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+}
+
+/* 768px and below - MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  body {
+    min-height: 100vh;
+  }
+  
+  nav {
+    min-height: auto;
+    padding: 25px 20px;
+    flex-shrink: 0;
+  }
+
+  .head1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* REORGANIZED: Inputs with swap button on RIGHT */
+  .input-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px 15px;
+    align-items: start;
+    max-width: 500px;
+    margin: 0 auto 15px;
+  }
+
+  /* Swap button positioned to the RIGHT */
+  .swap-container {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-top: 35px;
+    margin: 0;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Input containers - stacked vertically */
+  .input-wrapper {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    margin: 0;
+  }
+
+  .input-wrapper:first-child {
+    grid-row: 1;
+    margin-bottom: 5px;
+  }
+
+  .input-wrapper:last-child {
+    grid-row: 2;
+    margin-top: 0;
+  }
+
+  /* Input fields full width */
+  #fromBox,
+  #toBox {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 0;
+  }
+
+  /* Adjust dropdown width */
+  .dropdown {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+  }
+
+  /* Input labels smaller on mobile */
+  .input-label {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  /* Buttons side by side on mobile */
+  .button-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  /* Smaller buttons for mobile */
+  button {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+    max-width: 300px;
+  }
+
+  /* Adjust dropdown text for mobile */
+  .dropdown li {
+    font-size: 1.3rem;
+    padding: 8px 10px;
+  }
+
+  /* Map adjustments for mobile */
+  .map-container {
+    padding: 10px;
+    min-height: 50vh;
+  }
+  
+  .map-wrapper {
+    border-radius: 8px;
+  }
+
+  /* Mobile-specific swap animation */
+  .rotate-once {
+    animation: rotateOnceHorizontal 0.35s ease-in-out forwards;
+  }
+
+  @keyframes rotateOnceHorizontal {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* 576px and below - SMALL MOBILE */
+@media screen and (max-width: 576px) {
+  .head1 {
+    font-size: 2.3rem;
+  }
+
+  .input-label {
+    font-size: 1.2rem;
+  }
+
+  input::placeholder {
+    font-size: 15px;
+  }
+
+  #fromBox,
+  #toBox {
+    height: 42px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  /* Adjust swap button position */
+  .swap-container {
+    padding-top: 32px;
+    width: 50px;
+  }
+
+  .swapbox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dropdown {
+    width: 100%;
+    max-height: 220px;
+  }
+
+  .dropdown li {
+    font-size: 1.1rem;
+    padding: 7px 9px;
+  }
+
+  .nav-container {
+    padding: 15px 15px 10px;
+  }
+
+  /* Smaller buttons for small mobile */
+  button {
+    width: 120px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .button-container {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  /* Adjust grid layout */
+  .input-row {
+    gap: 8px 10px;
+    max-width: 400px;
+  }
+
+  /* Map adjustments */
+  .map-container {
+    padding: 8px;
+    min-height: 45vh;
+  }
+}
+
+/* 480px and below - EXTRA SMALL MOBILE */
+@media screen and (max-width: 480px) {
+  body {
+    overflow-y: auto;
+  }
+  
+  .head1 {
+    font-size: 2rem;
+  }
+
+  .input-label {
+    font-size: 1.1rem;
+  }
+
+  #fromBox,
+  #toBox {
+    height: 40px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    font-size: 13px;
+  }
+
+  /* Compact swap button */
+  .swap-container {
+    padding-top:0px;
+    width: 45px;
+  }
+
+  .swapbox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dropdown {
+    width:95%;
+    max-height: 170px;
+    margin-top: 2%;
+  }
+
+  .dropdown li {
+    font-size: 1rem;
+  }
+
+  /* Compact buttons */
+  .button-container {
+    gap: 10px;
+    margin-top: 10px;
+    margin-right:70px;
+  }
+
+  button {
+    width: 90px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust grid for very small screens */
+  .input-row {
+    gap: 6px 8px;
+    max-width: 350px;
+  }
+
+  /* Map adjustments for extra small mobile */
+  .map-container {
+    padding: 5px;
+    min-height:100vh;
+  }
+  
+  .map-wrapper {
+    border-radius: 6px;
+  }
+  .campus-map{
+    height: 100%;
+  }
+}
+
+/* 400px and below - VERY SMALL MOBILE */
+@media screen and (max-width: 400px) {
+  nav {
+    padding: 20px 15px 10px;
+  }
+
+  .head1 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+  }
+
+  .input-label {
+    font-size: 1rem;
+  }
+
+  #fromBox,
+  #toBox {
+    height: 38px;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    font-size: 12px;
+  }
+
+  /* Even smaller swap button */
+  .swap-container {
+    width: 45px;
+  }
+
+  .swapbox {
+    margin-top:-9px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .dropdown {
+    margin-top: 2%;
+    width:95%;
+    max-height: 170px;
+  }
+
+  .dropdown li {
+    font-size: 0.95rem;
+  }
+
+  /* Very compact buttons */
+  button {
+    width: 60px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .button-container {
+    margin-right:70px;
+    gap:10px;
+    margin-top: 15px;
+  }
+
+  /* Ensure everything fits */
+  .nav-container {
+    padding: 10px 5px;
+  }
+
+  .input-row {
+    gap: 5px 6px;
+    max-width: 320px;
+    margin-bottom: 10px;
+  }
+
+  /* Map adjustments for very small mobile */
+  .map-container {
+    min-height: 75vh;
+    padding: 3px;
+  }
+  
+  .campus-map {
+    transform-origin: center center;
+  }
+}
+/* Portrait mode adjustments */
+@media screen and (max-height: 700px) and (orientation: portrait) {
+  nav {
+    min-height: 35vh;
+    padding: 15px;
+  }
+  
+  .map-container {
+    min-height: 65vh;
+  }
+}
+
+/* Landscape mode adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  nav {
+    min-height: 50vh;
+  }
+  
+  .map-container {
+    min-height: 50vh;
+  }
+}
+
+/* Animation improvements */
+.dropdown li {
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.dropdown li:hover {
+  transform: scale(1.02);
+}
+
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+  animation: dropdownSlide 0.25s ease-in-out;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: 2000;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-header {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-header h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.close-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  background: rgba(255,0,0,0.3);
+  transform: scale(1.1);
+}
+
+.sidebar-content {
+  padding: 30px 20px;
+  color: white;
+}
+
+.sidebar-content h3 {
+  margin: 25px 0 15px 0;
+  font-size: 1.4rem;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+.dept-list, .floor-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.dept-list li, .floor-list li {
+  background: rgba(255,255,255,0.1);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.dept-list li:hover, .floor-list li:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+
+.sidebar-footer {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.close-btn-full {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-btn-full:hover {
+  background: rgba(255,0,0,0.3);
+  transform: scale(1.02);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Design - SAME AS YOUR ORIGINAL */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .input-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px 15px;
+    align-items: start;
+    max-width: 500px;
+    margin: 0 auto 15px;
+  }
+
+  .swap-container {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-top: 35px;
+    margin: 0;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-wrapper {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    margin: 0;
+  }
+
+  .head1 {
+    font-size: 2.8rem;
+  }
+
+  button {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Additional responsive breakpoints - SAME AS ORIGINAL */
+@media screen and (max-width: 576px) {
+  .head1 { font-size: 2.3rem; }
+  .map-container { min-height: 45vh; padding: 8px; }
+}
+
+@media screen and (max-width: 480px) {
+  .head1 { font-size: 2rem; }
+  .map-container { min-height: 100vh; padding: 5px; }
+}
+
+/* Add to your existing CSS */
+.user-location-icon-direction {
+    animation: pulse 2s infinite;
+}
+
+.leaflet-control-track-user {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 18px;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
